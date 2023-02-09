@@ -15,7 +15,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const debug = require('debug')('cypress-workshop-basics')
+// const debug = require('debug')('cypress-workshop-basics')
 
 const getDbFilename = () =>
   path.join(__dirname, '..', '..', 'todomvc', 'data.json')
@@ -52,7 +52,7 @@ const DEFAULT_DATA = {
 
 const resetData = (dataToSet = DEFAULT_DATA) => {
   const dbFilename = getDbFilename()
-  debug('reset data file %s with %o', dbFilename, dataToSet)
+  // debug('reset data file %s with %o', dbFilename, dataToSet)
   if (!dataToSet) {
     console.error('Cannot save empty object in %s', dbFilename)
     throw new Error('Cannot save empty object in resetData')
@@ -78,7 +78,7 @@ module.exports = (on, config) => {
     },
 
     hasSavedRecord(title, ms = 3000) {
-      debug('inside task')
+      // debug('inside task')
       console.log(
         'looking for title "%s" in the database (time limit %dms)',
         title,
